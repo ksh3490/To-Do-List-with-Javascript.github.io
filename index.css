@@ -7,12 +7,17 @@ body {
 }
 
 body {
-    color: #34495e;
+    color:#093f91;
+}
+
+h1{
+    font-size: 2.3rem;
 }
 
 .form,
 .greetings {
     display: none;
+    font-size: 1.9rem;
 }
 
 .showing {

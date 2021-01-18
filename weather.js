@@ -5,13 +5,13 @@ const COORDS = 'coords';
 
 function getWeather(lat, lng) {
     fetch(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}`
+        `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}`
     ).then(function (response) {
         return response.json();
     }).then(function (json) {
-        const temperature = json.main.temp,
+        const temperature = Math.floor(json.main.temp - 273.15),
             location = json.name;
-        weather.innerText = `${temperature} in ${location}`
+        weather.innerText = `${temperature} ℃ in ${location}`
     });
 }
 
